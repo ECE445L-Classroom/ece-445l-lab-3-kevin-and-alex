@@ -3,9 +3,7 @@
 #include "Systick.h"
 #include "LCD.h"
 
-uint32_t seconds = 0;
-uint32_t minutes = 50;
-uint32_t hours = 9;
+uint32_t timeInSeconds = 86390;
 
 void incrementTime(void);
 
@@ -14,18 +12,7 @@ void initSystick(void) {
 }
 
 void incrementTime(void) {
-	seconds++;
-	if (seconds >= 60) {
-		minutes++;
-		seconds = 0;
-	}
-	if (minutes >= 60) {
-		hours++;
-		minutes = 0;
-	}
-	if (hours >= 24) {
-		hours = 0;
-	}
-	displayNewTime();
-	drawClockHands();
+	timeInSeconds++;
+	timeInSeconds %= 86400;
+	updateDisplay(timeInSeconds);
 }

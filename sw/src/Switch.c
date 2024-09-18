@@ -63,7 +63,7 @@ void GPIOPortC_Handler(void) {
         // Perform debouncing for PC5
         uint32_t Value = SwitchPC6_Debounce();
         if (Value == 0x40) {  // If debounced value is still valid
-            /sdsdsdsd
+            // sdsdsdsd
         }
     }
 		if (GPIO_PORTC_RIS_R & 0x80) {  // PC5 caused the interrupt
