@@ -39,6 +39,7 @@
 #include "../inc/Timer0A.h"
 #include "Lab3.h"
 #include "LCD.h"
+#include "Switch.h"
 // ---------- Prototypes   -------------------------
 void DisableInterrupts(void); // Disable interrupts
 void EnableInterrupts(void);  // Enable interrupts

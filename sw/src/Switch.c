@@ -1,13 +1,7 @@
 // Switch.C
 // Interfaces all switches used on lab3
 
-
-#include <stdint.h>
-#include "../inc/tm4c123gh6pm.h"
-#include "../inc/CortexM.h"
-#include <string.h> 
-
-#define DELAY10US 160
+#include "switch.h"
 
 void Switch_Init(void) {
 	// Initialization for Port C
