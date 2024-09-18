@@ -10,6 +10,7 @@ void Switch_Init(void) {
 	GPIO_PORTC_DIR_R &= ~0xF0; // Sets pins 4,5,6,7 of Port C as input
 	GPIO_PORTC_DEN_R |= 0xF0; // Sets pins 4,5,6,7 of Port C as Digital I/O
 	GPIO_PORTF_AFSEL_R &= ~0xF0 ; // Diables Alt function on 4,5,6,7 on Port C
+	GPIO_PORTC_PUR_R |= 0xF0; // Enables Pull-Up Resistor on Port C 
 		
 	// Intialize Edge-Triggered Interrupts for Port C
 	GPIO_PORTC_IS_R &= ~0xF0;  // Make PC4-7 edge-sensitive
@@ -26,6 +27,7 @@ void Switch_Init(void) {
 	GPIO_PORTC_DIR_R &= ~0x11; // Sets pins 0, 4 of Port F as input
 	GPIO_PORTC_DEN_R |= 0x11; // Sets pins 0, 4 of Port F as Digital I/O
 	GPIO_PORTF_AFSEL_R &= ~0x11 ; // Diables Alt function on 0, 4 on Port F
+	GPIO_PORTF_PUR_R |= 0xF0; // Enables Pull-Up Resistor on Port C
 		
 	// Intialize Edge-Triggered Interrupts for Port F
 	GPIO_PORTF_IS_R &= ~0x11;  // Make PF0, 4 edge-sensitive
@@ -44,7 +46,7 @@ void GPIOPortC_Handler(void) {
         
         // Perform debouncing for PC4
         uint32_t Value = SwitchPC4_Debounce();
-        if (Value == 0x10) {  // If debounced value is still valid
+        if (Value == 0x00) {  // If debounced value is still valid
             // Handler for PC4 here
         }
     }
@@ -53,7 +55,7 @@ void GPIOPortC_Handler(void) {
         
         // Perform debouncing for PC5
         uint32_t Value = SwitchPC5_Debounce();
-        if (Value == 0x20) {  // If debounced value is still valid
+        if (Value == 0x00) {  // If debounced value is still valid
             // Handler
         }
     }
@@ -62,7 +64,7 @@ void GPIOPortC_Handler(void) {
         
         // Perform debouncing for PC5
         uint32_t Value = SwitchPC6_Debounce();
-        if (Value == 0x40) {  // If debounced value is still valid
+        if (Value == 0x00) {  // If debounced value is still valid
             // sdsdsdsd
         }
     }
@@ -71,7 +73,7 @@ void GPIOPortC_Handler(void) {
         
         // Perform debouncing for PC5
         uint32_t Value = SwitchPC7_Debounce();
-        if (Value == 0x80) {  // If debounced value is still valid
+        if (Value == 0x00) {  // If debounced value is still valid
             //sdsdsds
         }
     }
@@ -83,7 +85,7 @@ void GPIOPortF_Handler(void) {
         
         // Perform debouncing for PF0
         uint32_t Value = SwitchPF0_Debounce();
-        if (Value == 0x01) {  // If debounced value is still valid
+        if (Value == 0x00) {  // If debounced value is still valid
             // Handle the button release event for PF0
         }
     }
@@ -92,7 +94,7 @@ void GPIOPortF_Handler(void) {
         
         // Perform debouncing for PF4
         uint32_t Value = SwitchPF4_Debounce();
-        if (Value == 0x10) {  // If debounced value is still valid
+        if (Value == 0x00) {  // If debounced value is still valid
             // Handle the button release event for PF4
         }
     }
@@ -102,27 +104,27 @@ void GPIOPortF_Handler(void) {
 
 // Functions for Switch_In() that reads inputs of all switch ports
 uint32_t SwitchPC4_In(void) {
-	return GPIO_PORTC_DATA_R & 0x10; // 0x10 if pressed
+	return GPIO_PORTC_DATA_R & 0x10; // 0x10 if not pressed
 }
 
 uint32_t SwitchPC5_In(void) {
-	return GPIO_PORTC_DATA_R & 0x20; // 0x20 if pressed
+	return GPIO_PORTC_DATA_R & 0x20; // 0x20 if not pressed
 }
 
 uint32_t SwitchPC6_In(void) {
-	return GPIO_PORTC_DATA_R & 0x40; // 0x40 if pressed
+	return GPIO_PORTC_DATA_R & 0x40; // 0x40 if not pressed
 }
 
 uint32_t SwitchPC7_In(void) {
-	return GPIO_PORTC_DATA_R & 0x80; // 0x80 if pressed
+	return GPIO_PORTC_DATA_R & 0x80; // 0x80 if not pressed
 }
 
 uint32_t SwitchPF0_In(void) {
-	return GPIO_PORTF_DATA_R & 0x10; // 0x10 if pressed
+	return GPIO_PORTF_DATA_R & 0x10; // 0x10 if not pressed
 }
 
 uint32_t SwitchPF4_In(void) {
-	return GPIO_PORTF_DATA_R & 0x10; // 0x40 if pressed
+	return GPIO_PORTF_DATA_R & 0x10; // 0x40 if not pressed
 }
 
 

@@ -55,12 +55,12 @@ int main(void){
 	initSystick();
 	initLCD();
 	
-	PWM0A_Init(16000, 8000);
+	Speaker_Init(); 
+	Alarm = 1; // Turns on alarm
 	
   EnableInterrupts();
-  while(1){
-		WaitForInterrupt(); 
-      // write this
+  while(1){ 
+		// write this
   }
 }
 
