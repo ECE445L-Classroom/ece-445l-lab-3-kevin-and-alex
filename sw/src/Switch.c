@@ -11,14 +11,93 @@ void Switch_Init(void) {
 	GPIO_PORTC_DEN_R |= 0xF0; // Sets pins 4,5,6,7 of Port C as Digital I/O
 	GPIO_PORTF_AFSEL_R &= ~0xF0 ; // Diables Alt function on 4,5,6,7 on Port C
 		
+	// Intialize Edge-Triggered Interrupts for Port C
+	GPIO_PORTC_IS_R &= ~0xF0;  // Make PC4-7 edge-sensitive
+	GPIO_PORTC_IBE_R &= ~0xF0; // Trigger on one edge only
+	GPIO_PORTC_IEV_R |= 0xF0;  // Trigger on rising edge (button release)
+	GPIO_PORTC_ICR_R |= 0xF0;  // Clear any prior interrupts
+	GPIO_PORTC_IM_R |= 0xF0;   // Arm interrupt on PC4-7
+		
+	NVIC_EN0_R |= (1 << 2);    // Enable IRQ 2 for Port C
+		
 	// Initialization for Port F
 	SYSCTL_RCGCGPIO_R |= 0x20; // Activate Clock for Port F
 	while ((SYSCTL_PRGPIO_R&0x02) == 0) {}; // Wait for clock to be active
 	GPIO_PORTC_DIR_R &= ~0x11; // Sets pins 0, 4 of Port F as input
 	GPIO_PORTC_DEN_R |= 0x11; // Sets pins 0, 4 of Port F as Digital I/O
 	GPIO_PORTF_AFSEL_R &= ~0x11 ; // Diables Alt function on 0, 4 on Port F
+		
+	// Intialize Edge-Triggered Interrupts for Port F
+	GPIO_PORTF_IS_R &= ~0x11;  // Make PF0, 4 edge-sensitive
+	GPIO_PORTF_IBE_R &= ~0x11; // Trigger on one edge only
+	GPIO_PORTF_IEV_R |= 0x11;  // Trigger on rising edge (button release)
+	GPIO_PORTF_ICR_R |= 0x11;  // Clear any prior interrupts
+	GPIO_PORTF_IM_R |= 0x11;   // Arm interrupt on PF0, 4
+		
+	NVIC_EN0_R |= (1 << 30);   // Enable IRQ 30 for Port F
 	
 }
+
+void GPIOPortC_Handler(void) {
+    if (GPIO_PORTC_RIS_R & 0x10) {  // PC4 caused the interrupt
+        GPIO_PORTC_ICR_R = 0x10;    // Acknowledge the interrupt
+        
+        // Perform debouncing for PC4
+        uint32_t Value = SwitchPC4_Debounce();
+        if (Value == 0x10) {  // If debounced value is still valid
+            // Handler for PC4 here
+        }
+    }
+    if (GPIO_PORTC_RIS_R & 0x20) {  // PC5 caused the interrupt
+        GPIO_PORTC_ICR_R = 0x20;    // Acknowledge the interrupt
+        
+        // Perform debouncing for PC5
+        uint32_t Value = SwitchPC5_Debounce();
+        if (Value == 0x20) {  // If debounced value is still valid
+            // Handler
+        }
+    }
+    if (GPIO_PORTC_RIS_R & 0x40) {  // PC5 caused the interrupt
+        GPIO_PORTC_ICR_R = 0x40;    // Acknowledge the interrupt
+        
+        // Perform debouncing for PC5
+        uint32_t Value = SwitchPC6_Debounce();
+        if (Value == 0x40) {  // If debounced value is still valid
+            /sdsdsdsd
+        }
+    }
+		if (GPIO_PORTC_RIS_R & 0x80) {  // PC5 caused the interrupt
+        GPIO_PORTC_ICR_R = 0x80;    // Acknowledge the interrupt
+        
+        // Perform debouncing for PC5
+        uint32_t Value = SwitchPC7_Debounce();
+        if (Value == 0x80) {  // If debounced value is still valid
+            //sdsdsds
+        }
+    }
+}
+
+void GPIOPortF_Handler(void) {
+    if (GPIO_PORTF_RIS_R & 0x01) {  // PF0 caused the interrupt
+        GPIO_PORTF_ICR_R = 0x01;    // Acknowledge the interrupt
+        
+        // Perform debouncing for PF0
+        uint32_t Value = SwitchPF0_Debounce();
+        if (Value == 0x01) {  // If debounced value is still valid
+            // Handle the button release event for PF0
+        }
+    }
+    if (GPIO_PORTF_RIS_R & 0x10) {  // PF4 caused the interrupt
+        GPIO_PORTF_ICR_R = 0x10;    // Acknowledge the interrupt
+        
+        // Perform debouncing for PF4
+        uint32_t Value = SwitchPF4_Debounce();
+        if (Value == 0x10) {  // If debounced value is still valid
+            // Handle the button release event for PF4
+        }
+    }
+}
+
 
 
 // Functions for Switch_In() that reads inputs of all switch ports
@@ -174,4 +253,6 @@ uint32_t in,old,time;
   }
   return old;
 }
+
+
 
