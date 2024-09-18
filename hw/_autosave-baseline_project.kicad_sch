@@ -439,6 +439,201 @@
 				)
 			)
 		)
+		(symbol "Device:Thermistor_US"
+			(pin_numbers hide)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "TH"
+				(at 2.54 1.27 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Thermistor_US"
+				(at -2.54 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Thermistor, temperature dependent resistor, US symbol"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "R res thermistor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "R_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Thermistor_US_0_1"
+				(polyline
+					(pts
+						(xy 0 -2.286) (xy 0 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.286) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.905 -1.27) (xy 1.905 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.905 2.54) (xy -1.905 1.27) (xy 1.905 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -0.762) (xy 1.016 -1.143) (xy 0 -1.524) (xy -1.016 -1.905) (xy 0 -2.286)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0.762) (xy 1.016 0.381) (xy 0 0) (xy -1.016 -0.381) (xy 0 -0.762)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.286) (xy 1.016 1.905) (xy 0 1.524) (xy -1.016 1.143) (xy 0 0.762)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Thermistor_US_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "ECE445L:Adafruit_ST7735R"
 			(pin_names
 				(offset 1.016)
@@ -3237,6 +3432,12 @@
 		(uuid "088c55f7-68ca-4864-bfa9-36e317867df0")
 	)
 	(junction
+		(at 203.2 60.96)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0aa33a3c-2a14-4776-9fef-b843ea6d59e9")
+	)
+	(junction
 		(at 95.25 125.73)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3307,6 +3508,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ccab59ad-8e13-4393-b818-78c37324e88f")
+	)
+	(junction
+		(at 203.2 63.5)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d11a0f0f-6b00-4cd1-b84d-57966c1f64a8")
 	)
 	(junction
 		(at 131.445 26.67)
@@ -3574,6 +3781,16 @@
 	)
 	(wire
 		(pts
+			(xy 203.2 63.5) (xy 210.82 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "28e93646-5cc6-46e0-9764-dd5a709b6cef")
+	)
+	(wire
+		(pts
 			(xy 73.66 125.73) (xy 83.82 125.73)
 		)
 		(stroke
@@ -3691,6 +3908,16 @@
 			(type default)
 		)
 		(uuid "42a7f9da-a777-4eda-9c9b-f333b67795f8")
+	)
+	(wire
+		(pts
+			(xy 203.2 60.96) (xy 203.2 57.785)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4539f72d-fbc8-48bb-9f58-0ca2df88096f")
 	)
 	(wire
 		(pts
@@ -3962,6 +4189,16 @@
 		)
 		(uuid "88bc8041-a1de-443a-830b-064a9a007946")
 	)
+	(wire
+		(pts
+			(xy 203.2 53.34) (xy 203.2 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8957f72e-52d3-4420-8966-0c3a11c5f4d2")
+	)
 	(polyline
 		(pts
 			(xy 176.53 15.24) (xy 176.53 157.48)
@@ -4164,6 +4401,16 @@
 	)
 	(wire
 		(pts
+			(xy 203.2 71.12) (xy 203.2 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b32fa9fa-7aad-41d0-9088-af15b7060dd8")
+	)
+	(wire
+		(pts
 			(xy 60.96 64.77) (xy 65.405 64.77)
 		)
 		(stroke
@@ -4271,6 +4518,16 @@
 			(type default)
 		)
 		(uuid "d36ab718-1788-4d12-b1f3-58e0ef44c5e9")
+	)
+	(wire
+		(pts
+			(xy 203.2 60.96) (xy 203.2 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d3be2885-4b4a-4843-9217-ba7eafdc33a1")
 	)
 	(wire
 		(pts
@@ -4885,6 +5142,28 @@
 		(uuid "2c422e46-dd92-43a6-af5b-00eddf7d0fa3")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 72.1397 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "PE4"
+		(shape input)
+		(at 210.82 63.5 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "2d6a2362-970f-462f-9ba7-bd9a9121d347")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 217.4337 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6612,6 +6891,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 203.2 74.93 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "315f1dbc-dc3f-4187-b319-35f44255ea56")
+		(property "Reference" "#PWR07"
+			(at 203.2 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 203.2 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 203.2 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 203.2 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 203.2 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c65e8aef-c58f-4050-9fb5-1cbcd3edd8d0")
+		)
+		(instances
+			(project "baseline_project"
+				(path "/69b823fd-c065-40ff-9bb9-c5835555f3eb"
+					(reference "#PWR07")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "ECE445L:MountingHole")
 		(at 171.45 22.225 0)
 		(unit 1)
@@ -7214,6 +7559,76 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:Thermistor_US")
+		(at 203.2 67.31 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "57b4cd15-0a8a-4656-a16c-45c29d765664")
+		(property "Reference" "TH1"
+			(at 205.74 66.0399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Thermistor_US"
+			(at 205.74 68.5799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 203.2 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 203.2 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Thermistor, temperature dependent resistor, US symbol"
+			(at 203.2 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "72d8ef06-c2da-44e5-8544-ec71df1f3258")
+		)
+		(pin "1"
+			(uuid "179a421d-98ab-40d5-989b-9636e8ba88f9")
+		)
+		(instances
+			(project ""
+				(path "/69b823fd-c065-40ff-9bb9-c5835555f3eb"
+					(reference "TH1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "ECE445L:C")
 		(at 137.795 33.655 0)
 		(unit 1)
@@ -7752,6 +8167,72 @@
 			(project "baseline_project"
 				(path "/69b823fd-c065-40ff-9bb9-c5835555f3eb"
 					(reference "SW103")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 203.2 53.34 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "933916fa-5cc7-46b9-8e4e-d7563deb9ade")
+		(property "Reference" "#PWR06"
+			(at 203.2 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 203.2 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 203.2 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 203.2 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 203.2 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a96b1910-df4e-4568-bc45-87ee9d25ce71")
+		)
+		(instances
+			(project "baseline_project"
+				(path "/69b823fd-c065-40ff-9bb9-c5835555f3eb"
+					(reference "#PWR06")
 					(unit 1)
 				)
 			)
@@ -8707,6 +9188,75 @@
 			(project "baseline_project"
 				(path "/69b823fd-c065-40ff-9bb9-c5835555f3eb"
 					(reference "#PWR0101")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ECE445L:R_0.125W")
+		(at 203.2 58.42 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "fd265e4d-fedc-4a9a-b600-1c0a8c7e874f")
+		(property "Reference" "R2"
+			(at 198.12 56.642 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10k"
+			(at 203.454 59.944 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "ECE445L:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal"
+			(at 203.2 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://users.ece.utexas.edu/~valvano/mspm0/CarbonFilmresistors.pdf"
+			(at 203.2 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small US symbol"
+			(at 203.2 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "daaf9e13-13e1-44cb-bece-19ced5a501ce")
+		)
+		(pin "2"
+			(uuid "ef5a13d5-5db6-4701-8d88-d2c81735846c")
+		)
+		(instances
+			(project "baseline_project"
+				(path "/69b823fd-c065-40ff-9bb9-c5835555f3eb"
+					(reference "R2")
 					(unit 1)
 				)
 			)

@@ -41,6 +41,8 @@
 #include "LCD.h"
 #include "Systick.h"
 #include "Switch.h"
+#include "Speaker.h"
+
 // ---------- Prototypes   -------------------------
 void DisableInterrupts(void); // Disable interrupts
 void EnableInterrupts(void);  // Enable interrupts
@@ -48,11 +50,16 @@ void WaitForInterrupt(void);  // low power mode
 int main(void){
   DisableInterrupts();
   PLL_Init(Bus80MHz);    // bus clock at 80 MHz
+	
   // write this
 	initSystick();
 	initLCD();
+	
+	PWM0A_Init(16000, 8000);
+	
   EnableInterrupts();
   while(1){
+		WaitForInterrupt(); 
       // write this
   }
 }
