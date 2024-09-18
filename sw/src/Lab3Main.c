@@ -39,6 +39,7 @@
 #include "../inc/Timer0A.h"
 #include "Lab3.h"
 #include "LCD.h"
+#include "Systick.h"
 // ---------- Prototypes   -------------------------
 void DisableInterrupts(void); // Disable interrupts
 void EnableInterrupts(void);  // Enable interrupts
@@ -47,6 +48,7 @@ int main(void){
   DisableInterrupts();
   PLL_Init(Bus80MHz);    // bus clock at 80 MHz
   // write this
+	initSystick();
 	initLCD();
   EnableInterrupts();
   while(1){

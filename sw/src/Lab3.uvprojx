@@ -425,6 +425,16 @@
               <FileType>5</FileType>
               <FilePath>.\Image.h</FilePath>
             </File>
+            <File>
+              <FileName>Systick.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Systick.c</FilePath>
+            </File>
+            <File>
+              <FileName>Systick.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Systick.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
