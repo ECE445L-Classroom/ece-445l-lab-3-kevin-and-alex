@@ -18,3 +18,4 @@ uint32_t SwitchPC6_Debounce(void);
 uint32_t SwitchPC7_Debounce(void);
 uint32_t SwitchPF0_Debounce(void);
 uint32_t SwitchPF4_Debounce(void);
+void Clock_Delay1ms(uint32_t n);

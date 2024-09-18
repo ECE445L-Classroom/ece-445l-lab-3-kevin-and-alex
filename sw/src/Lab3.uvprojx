@@ -455,6 +455,21 @@
               <FileType>1</FileType>
               <FilePath>..\inc\Timer2A.c</FilePath>
             </File>
+            <File>
+              <FileName>Thermistor.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Thermistor.c</FilePath>
+            </File>
+            <File>
+              <FileName>Thermistor.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Thermistor.h</FilePath>
+            </File>
+            <File>
+              <FileName>Switch.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Switch.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
