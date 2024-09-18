@@ -4,8 +4,8 @@
 #include "LCD.h"
 
 uint32_t seconds = 0;
-uint32_t minutes = 0;
-uint32_t hours = 12;
+uint32_t minutes = 50;
+uint32_t hours = 9;
 
 void incrementTime(void);
 
@@ -27,4 +27,5 @@ void incrementTime(void) {
 		hours = 0;
 	}
 	displayNewTime();
+	drawClockHands();
 }
