@@ -3,6 +3,8 @@
 
 #include "switch.h"
 
+
+
 void Switch_Init(void) {
 	// Initialization for Port C
 	SYSCTL_RCGCGPIO_R |= 0x04; // Activate Clock for Port C
@@ -59,19 +61,19 @@ void GPIOPortC_Handler(void) {
             // Handler
         }
     }
-    if (GPIO_PORTC_RIS_R & 0x40) {  // PC5 caused the interrupt
+    if (GPIO_PORTC_RIS_R & 0x40) {  // PC6 caused the interrupt
         GPIO_PORTC_ICR_R = 0x40;    // Acknowledge the interrupt
         
-        // Perform debouncing for PC5
+        // Perform debouncing for PC6
         uint32_t Value = SwitchPC6_Debounce();
         if (Value == 0x00) {  // If debounced value is still valid
-            // sdsdsdsd
+            // shift arrow left in main menu
         }
     }
-		if (GPIO_PORTC_RIS_R & 0x80) {  // PC5 caused the interrupt
+		if (GPIO_PORTC_RIS_R & 0x80) {  // PC7 caused the interrupt
         GPIO_PORTC_ICR_R = 0x80;    // Acknowledge the interrupt
         
-        // Perform debouncing for PC5
+        // Perform debouncing for PC7
         uint32_t Value = SwitchPC7_Debounce();
         if (Value == 0x00) {  // If debounced value is still valid
             //sdsdsds
