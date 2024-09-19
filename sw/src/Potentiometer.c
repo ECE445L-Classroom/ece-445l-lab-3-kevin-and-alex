@@ -1,6 +1,6 @@
 #include "Potentiometer.h" 
 
-void Thermistor_Init(void){
+void Potentiometer_Init(void){
 // write this
 	SYSCTL_RCGCADC_R |= 0x0001; // Activates ADC0
 	SYSCTL_RCGCGPIO_R |= 0x10; // Activate Clock for Port E
