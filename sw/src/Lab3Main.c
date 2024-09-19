@@ -42,6 +42,8 @@
 #include "Systick.h"
 #include "Switch.h"
 #include "Speaker.h"
+#include "Thermistor.h" 
+#include "Potentiometer.h" 
 
 // ---------- Prototypes   -------------------------
 void DisableInterrupts(void); // Disable interrupts
@@ -54,6 +56,14 @@ int main(void){
   // write this
 	initSystick();
 	initLCD();
+	
+	Thermistor_Init(); 
+	// Thermistor 
+	
+	// Call ChangeTime_Mode to enable the potentiometer to measure data
+	// Should have LCD live pulling values from Potentiometer_ISR 
+	// ISR won't be called if timer off
+	
 	
 	Speaker_Init(); 
 	Alarm = 1; // Turns on alarm
